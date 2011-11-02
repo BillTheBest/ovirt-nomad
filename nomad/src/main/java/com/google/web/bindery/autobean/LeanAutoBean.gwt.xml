@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<module>
+  <source path="gwt/client" />
+  <source path="shared" />
+  <super-source path="super" />
+  <generate-with class="com.google.web.bindery.autobean.gwt.rebind.AutoBeanFactoryGenerator">
+    <when-type-assignable class="com.google.web.bindery.autobean.shared.AutoBeanFactory" />
+  </generate-with>
+</module>
