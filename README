@@ -1,0 +1,53 @@
+Pre-requisites
+==============================
+Install Appcelerator Titanium 
+  - http://wiki.appcelerator.org/display/guides/Quick+Start
+
+Install Android SDK
+  - http://wiki.appcelerator.org/display/guides/Installing+and+Updating+Android+SDK
+
+
+Configure Environment Variables
+# Android SDK
+export ANDROID_SDK=/path/to/androidsdk
+export ANDROID_HOME=/path/to/androidsdk
+export PATH=$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$PATH
+
+# Titanium SDK
+export TITANIUM_VERSION=1.7.2
+export TITANIUM_HOME=/path/to/Titanium/MobileSDK/"
+alias titanium="$TITANIUM_HOME/titanium.py"
+
+
+Running ovirt-nomad via emulator Maven
+==============================
+1. Create an AVD name ovirt, should target API level 11
+
+2. Start android emulator (if applicable): mvn android:emulator-start    
+   (recommended as android emulator takes time to start)
+
+3. Build/run project: 
+
+    mvn clean package exec:exec -Dtarget.platform=android  
+
+     OR 
+
+    mvn clean package exec:exec -Dtarget.platform=iphone
+
+5. Debug: $ANDROID_SDK/tools/ddms
+
+Additional Steps for running in Windows environment
+=================================================
+1. Need python scripts to execute as commands
+http://docs.python.org/using/windows.html
+
+assoc .py=Python.File
+ftype Python.File=C:\Path\to\python.exe "%1" %*
+
+If don't use python for anything else, then you can find a distro of it with your titanium, e.g.:
+
+C:\ProgramData\Titanium\modules\win32\python\1.1.0\python.exe
+
+2. Need android sdk path declared, this is set in parent pom, but you will most likely want to over-ride
+	* can add to command line parameters to titanium.py (e.g. --android=path/to/android_sdk)
+	* can set in ANDROID_SDK environment variable
