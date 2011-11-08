@@ -9,7 +9,6 @@
 
 	<groupId>com.vizuri.mobile.nomad</groupId>
 	<artifactId>nomad</artifactId>
-	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>oVirt Nomad :: Core</name>

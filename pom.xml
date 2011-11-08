@@ -14,6 +14,12 @@
     Mobile Application for interfacing with the RESTful API for oVirt Enterprise Virtualization
     </description>
 
+	<scm>
+		<connection>scm:git://github.com/Vizuri/ovirt-nomad.git</connection>
+		<url>scm:git:git@github.com:Vizuri/ovirt-nomad.gi</url>
+		<developerConnection>scm:git:git@github.com:Vizuri/ovirt-nomad.git</developerConnection>
+	</scm>
+
 	<licenses>
 		<license>
 			<name>Apache License Version 2.0</name>
@@ -50,7 +56,7 @@
 		<mobile.module>${project.artifactId}</mobile.module>
 		<titanium.sdk.home>/Volumes/Home/ichristoffersen/Library/Application Support/Titanium/mobilesdk/osx/1.7.5/</titanium.sdk.home>
 		<titanium.sdk.version>1.7.2</titanium.sdk.version>
-		<target.platform>iphone</target.platform>
+		<target.platform>android</target.platform>
 	</properties>
 	<build>
 		<pluginManagement>
@@ -90,16 +96,47 @@
 						</execution>
 					</executions>
 				</plugin>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.jayway.maven.plugins.android.generation2
+										</groupId>
+										<artifactId>
+											maven-android-plugin
+										</artifactId>
+										<versionRange>
+											[2.8.4,)
+										</versionRange>
+										<goals>
+											<goal>emulator-start</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
 			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-compiler-plugin</artifactId>
-			    <configuration>
-			        <source>1.6</source>
-			        <target>1.6</target>
-			    </configuration>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-scm-plugin</artifactId>

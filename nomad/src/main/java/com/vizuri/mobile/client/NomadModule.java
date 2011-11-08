@@ -60,21 +60,21 @@ public class NomadModule extends GwtTitaniumBootstrap {
 
 		final Tab dashboard = UI.createTab();
 		dashboard.setTitle("Dashboard");
-		dashboard.setIcon("KS_nav_ui.png");
+		dashboard.setIcon("shared/images/KS_nav_ui.png");
 
 		dashboard.setWindow(dashboardController.getBaseView().getWindow());
 		tabGroup.addTab(dashboard);
 
 		final Tab hosts = UI.createTab();
 		hosts.setWindow(hostsController.getBaseView().getWindow());
-		hosts.setIcon("KS_nav_ui.png");
+		hosts.setIcon("shared/images/hosts.png");
 		hosts.setTitle("Hosts");
 
 		tabGroup.addTab(hosts);
 
 		final Tab vms = UI.createTab();
 		vms.setWindow(guestsController.getBaseView().getWindow());
-		vms.setIcon("KS_nav_ui.png");
+		vms.setIcon("shared/images/vms.png");
 		vms.setTitle("Guests");
 		tabGroup.addTab(vms);
 
@@ -87,13 +87,13 @@ public class NomadModule extends GwtTitaniumBootstrap {
 		final Tab configuration = UI.createTab();
 		configuration.setWindow(configurationController.getBaseView()
 				.getWindow());
-		configuration.setIcon("tool.png");
+		configuration.setIcon("shared/images/tool.png");
 		configuration.setTitle("Config");
 		tabGroup.addTab(configuration);
 
 		final Tab about = UI.createTab();
 		about.setWindow(new AboutWindow().getWindow());
-		about.setIcon("help.png");
+		about.setIcon("shared/images/help.png");
 		about.setTitle("About");
 		tabGroup.addTab(about);
 		tabGroup.open();
