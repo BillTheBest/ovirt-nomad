@@ -48,7 +48,7 @@
 		<scm.branch>master</scm.branch>
 		<mobile.package>${project.groupId}</mobile.package>
 		<mobile.module>${project.artifactId}</mobile.module>
-		<titanium.sdk.home>${env.TITANIUM_HOME}</titanium.sdk.home>
+		<titanium.sdk.home>/Volumes/Home/ichristoffersen/Library/Application Support/Titanium/mobilesdk/osx/1.7.5/</titanium.sdk.home>
 		<titanium.sdk.version>1.7.2</titanium.sdk.version>
 		<target.platform>iphone</target.platform>
 	</properties>
@@ -93,6 +93,14 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-compiler-plugin</artifactId>
+			    <configuration>
+			        <source>1.6</source>
+			        <target>1.6</target>
+			    </configuration>
+			</plugin>
 			<plugin>
 				<artifactId>maven-scm-plugin</artifactId>
 				<configuration>
